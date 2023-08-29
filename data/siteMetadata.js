@@ -1,7 +1,7 @@
 const siteMetadata = {
-  title: { en: 'GridoAI Blog', pt: 'GridoAI Blog' },
+  title: { en: 'Blog', pt: 'Blog' },
   author: 'GridoAI',
-  headerTitle: { en: 'GridoAI Blog', pt: 'GridoAI Blog' },
+  headerTitle: { en: 'GridoAI', pt: 'GridoAI' },
   // description: 'A blog created with Next.js and Tailwind.css',
   description: {
     en: 'Explore our posts, you will love it!',
@@ -14,7 +14,7 @@ const siteMetadata = {
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'contato@gridoai.com',
-  github: 'https://github.com',
+  github: 'https://github.com/gridoai/gridoai-blog',
   twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
