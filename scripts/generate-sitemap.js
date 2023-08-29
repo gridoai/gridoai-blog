@@ -57,7 +57,7 @@ const i18nConfig = require('../i18n.json')
   if (siteMetadata.siteUrl[siteMetadata.siteUrl.length - 1] == '/') {
     console.error("/!\\: siteUrl in siteMetadata has an '/' at the end. Please remove it.")
   }
-  const siteUrl = siteMetadata.siteUrl
+  const siteUrl = siteMetadata
 
   const sitemap = `
   <?xml version="1.0" encoding="UTF-8"?>

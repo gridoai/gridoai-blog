@@ -1,6 +1,6 @@
 {
-  "locales": ["en", "fr"],
-  "defaultLocale": "en",
+  "locales": ["en", "pt"],
+  "defaultLocale": "pt",
   "pages": {
     "*": ["common", "headerNavLinks", "newsletter", "404", "SEO"],
     "/projects": ["projects"]

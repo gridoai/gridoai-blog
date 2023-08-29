@@ -1,0 +1,10 @@
+{
+  "mail": "Endereço de email",
+  "title": "Inscreva-se na newsletter",
+  "messageError": "Seu endereço de e-mail é inválido ou você já está inscrito!",
+  "messageSuccess": "Sucesso! 🎉 Você está inscrito.",
+  "placeholderSucces": "Você está inscrito! 🎉",
+  "placeholderDefault": "Digite seu email",
+  "buttonSuccess": "Obrigado!",
+  "buttonDefault": "Inscrever-se"
+}
