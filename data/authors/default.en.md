@@ -1,6 +1,6 @@
 ---
 name: Pedro Cleto
-avatar: /static/images/cleto.jpeg
+avatar: /static/images/logo-cropped.png
 occupation: Founder
 company: GridoAI
 email: pedro@gridoai.com
