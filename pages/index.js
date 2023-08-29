@@ -99,11 +99,6 @@ export default function Home({ posts, locale, availableLocales }) {
           </Link>
         </div>
       )}
-      {siteMetadata.newsletter.provider !== '' && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm title={t('newsletter:title')} />
-        </div>
-      )}
     </>
   )
 }
