@@ -1,20 +1,16 @@
 ---
 name: GridoAI
 avatar: /static/images/logo-cropped.png
-occupation: Oráculo de conhecimento corporativo
+occupation: Startup brasileira
 email: contato@gridoai.com
-# linkedin: https://www.linkedin.com/in/ppedrocleto
-github: https://github.com/cl3t0
+linkedin: https://www.linkedin.com/company/gridoai
+github: https://github.com/gridoai/gridoai-blog
 ---
 
-A GridoAI é uma empresa que utiliza inteligência artificial para revolucionar a forma como você interage com dados e informações corporativas. Com o objetivo de fornecer um oráculo de conhecimento corporativo para empresas de todos os segmentos, a GridoAI oferece uma plataforma que transforma seus documentos em respostas precisas e contextualizadas.
+A GridoAI é uma startup especializada em inteligência artificial, cujo objetivo é tornar o acesso ao conhecimento corporativo mais eficiente e preciso. Nós oferecemos uma plataforma inovadora que analisa e processa documentos em tempo real, para fornecer insights valiosos e respostas contextualizadas.
 
-Ao contrário de outros assistentes virtuais, a GridoAI é capaz de processar e analisar os documentos da sua empresa, transformando-os em um banco de dados inteligente que pode responder às suas perguntas com base em informações reais. Com o acesso a essas informações valiosas, você e sua equipe economizarão tempo e esforço na busca por informações relevantes, eliminando a necessidade de procurar em várias fontes ou depender de conhecimentos individuais.
+Acreditamos que as informações são o ativo mais valioso de uma organização, mas muitas vezes elas estão descentralizadas em sistemas e documentos, o que dificulta o acesso e torna a busca por informações demorada e pouco eficiente.
 
-Ao conectar seus documentos à plataforma da GridoAI, você terá respostas confiáveis e fundamentadas em dados para seus questionamentos mais complexos. Não é mais necessário perder tempo lendo informações erradas ou tomar decisões baseadas em suposições. Com a GridoAI, você terá acesso a um vasto conhecimento corporativo, sempre atualizado e pronto para ser explorado.
+Para solucionar esse problema, a GridoAI utiliza técnicas de processamento de linguagem natural, aprendizado de máquina e análise de dados para extrair informações relevantes e fornecer respostas precisas com base nos documentos e dados da empresa.
 
-A GridoAI também oferece recursos avançados de integração de dados, permitindo que você conecte a plataforma a sistemas e ferramentas populares, como Google Drive, Confluence e GitHub. Dessa forma, você pode centralizar todas as suas informações em um único local e obter respostas rápidas e precisas, independentemente de onde elas estejam armazenadas.
-
-Com a GridoAI, você terá um assistente inteligente que atenderá clientes com mais rapidez, precisão e eficiência, aumentando sua produtividade e qualidade de atendimento. Seja para o suporte ao cliente, o atendimento técnico ou o auxílio aos departamentos de RH e jurídico, a GridoAI está pronta para fornecer respostas valiosas e insights estratégicos em tempo real.
-
-Experimente hoje mesmo a GridoAI e descubra como nossa inteligência artificial revolucionará a maneira como você e sua empresa interagem com informações corporativas.
+Nosso objetivo é ajudar as empresas a otimizarem suas operações, melhorarem a tomada de decisões e impulsionarem sua produtividade. Com a GridoAI, as organizações podem contar com um oráculo de conhecimento corporativo, capaz de fornecer informações precisas e inteligentes tanto para seus clientes quanto internamente em diversas áreas, como RH, TI, jurídico, e por aí vai.
