@@ -76,9 +76,17 @@ export default function PostLayout({
                           className="h-10 w-10 rounded-full"
                         />
                       )}
-                      <dl className="whitespace-nowrap text-sm font-medium leading-5">
+                      <dl className="text-sm font-medium leading-5" style={{ maxWidth: '80%', overflow: 'visible' }}>
                         <dt className="sr-only">{t('common:name')}</dt>
                         <dd className="text-gray-900 dark:text-gray-100">{author.name}</dd>
+
+                        {author.occupation && author.company && (
+                          <>
+                            <dt className="sr-only">Short Description</dt>
+                            <dd className="text-gray-600 dark:text-gray-300">{author.occupation} @ {author.company}</dd>
+                          </>
+                        )}
+
                         <dt className="sr-only">Twitter</dt>
                         <dd>
                           {author.twitter && (
@@ -151,6 +159,6 @@ export default function PostLayout({
           </div>
         </div>
       </article>
-    </SectionContainer>
+    </SectionContainer >
   )
 }
