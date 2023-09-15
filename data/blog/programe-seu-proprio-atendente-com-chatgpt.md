@@ -1,6 +1,6 @@
 ---
 title: Programe seu próprio atendente com o ChatGPT
-date: '2023-09-01'
+date: '2023-09-15'
 tags: ['chatgpt', 'llm', 'costumer-service']
 draft: false
 summary: Detalhes sobre como construir um atendente virtual baseado no ChatGPT
@@ -9,7 +9,9 @@ authors: ['cleto']
 
 ![Untitled](/static/images/chatgpt.webp)
 
-Sendo o primeiro post do blog da GridoAI, quero te introduzir numa das infinitas aplicações dos LLMs (Large Language Models): Atendimento ao cliente (ou possível cliente). O ChatGPT por si só já é um produto fascinante, mas não tem como ele atender seus clientes sem saber do que se trata sua empresa ou seu produto/serviço e é aí que a gente entra. Como informar um LLM sobre as informações que ele necessita para efetuar sua função? Existem duas principais formas. Isso vai ser um papo sério de dev para dev!
+Sendo o primeiro post do blog da GridoAI, quero te introduzir numa das infinitas aplicações dos LLMs (Large Language Models): Atendimento ao cliente (ou lead). O atendimento ao cliente automatizado é particularmente valioso para empresas que enfrentam um grande volume de consultas, pois permite gerenciar múltiplos pedidos simultaneamente, oferecendo respostas rápidas e consistentes a qualquer hora do dia.
+
+O ChatGPT por si só já é um produto fascinante, mas não tem como ele atender seus clientes sem saber do que se trata sua empresa ou seu produto/serviço e é aí que a gente entra. Como informar um LLM sobre as informações que ele necessita para efetuar sua função? Existem duas principais formas. Isso vai ser um papo sério de dev para dev!
 
 ### Antes de continuar
 
@@ -18,7 +20,13 @@ Sendo o primeiro post do blog da GridoAI, quero te introduzir numa das infinitas
 
 ## **Adicionando instruções no contexto**
 
-O principal modelo por de trás do ChatGPT é o gpt-3.5-turbo. Este tem duas versões, a de 4.000 tokens de contexto, que é aproximadamente 3.000 palavras e a de 16.000 tokens que é aproximadamente 12.000 palavras. Dependendo da complexidade do seu atendimento, é possível instruir o LLM dentro de algum desses limites. Por exemplo, se a sua intenção é responder perguntas baseadas num FAQ (Perguntas frequentes) e este conter por volta de 10.000 palavras no máximo, é possível criar um atendente virtual com base nesse FAQ! Baseado num FAQ que encontrei na [internet](https://www.gov.br/empresas-e-negocios/pt-br/observatorioapl/faq), segue exemplo de código:
+### Tokens e Contexto
+
+O principal modelo por de trás do ChatGPT é o gpt-3.5-turbo. Este tem duas versões, a de 4.000 tokens de contexto, que é aproximadamente 3.000 palavras e a de 16.000 tokens que é aproximadamente 12.000 palavras. Dependendo da complexidade do seu atendimento, é possível instruir o LLM dentro de algum desses limites. Por exemplo, se a sua intenção é responder perguntas baseadas num FAQ (Perguntas frequentes) e este conter por volta de 10.000 palavras no máximo, é possível criar um atendente virtual com base nesse FAQ!
+
+### Exemplo de código
+
+Baseado num FAQ que encontrei na [internet](https://www.gov.br/empresas-e-negocios/pt-br/observatorioapl/faq), segue exemplo de código:
 
 ```python
 import openai
@@ -71,7 +79,9 @@ Em produção, a implementação não seria essa. Por dois motivos:
 
 Note que a variável `system_message` tem um _prompt_ que orienta o LLM sobre como atender o seu cliente. É possível personalizar este _prompt_ da forma que for melhor para o seu caso de uso.
 
-## Busca em documentos
+## **Busca em documentos**
+
+### Introdução à Busca Semântica
 
 E se as suas orientações de atendimento não cabem em 4.000 tokens e nem em 16.000 tokens de contexto? Nesse caso, você precisa selecionar parte dos seus documentos de atendimento a depender da pergunta do cliente. Isso parece bem mais complexo, não é mesmo? Segue diagrama de como isso deve funcionar na prática.
 
@@ -83,7 +93,7 @@ Esses são os exatos elementos necessários para efetuar uma **busca semântica*
 
 Busca semântica é uma estratégia de busca que leva em consideração o significado do texto fornecido. Isso significa que “Eu gosto de gatos” e “Amo felinos” serão considerados parecidos mesmo com palavras completamente diferentes! Na prática, isso significa que se a pergunta do cliente não estiver inteiramente contida em palavras num documento de perguntas e respostas, mas o sentido for próximo, este documento será selecionado para contextualizar a pergunta. Magnífico, não é?
 
-## Vetor e banco de vetores
+### Vetor
 
 Vetor é uma “lista de números” e a _dimensão_ do vetor é a quantidade de elementos nessa lista. Portanto, `(1, 3)` é um vetor com dimensão 2. Vetores de dimensão 2 podem ser representados num plano como esse:
 
@@ -91,7 +101,7 @@ Vetor é uma “lista de números” e a _dimensão_ do vetor é a quantidade de
 
 Note que o vetor `(1, 3)` está muito mais distante do vetor `(5, -2)` do que do `(-1, 2)`. Esse conceito de **distância** é extremamente relevante, mas existem diversas formas matemáticas de interpretá-lo. Aqui iremos considerar apenas a distância por cossenos.
 
-### Distância por cosseno
+### Distância por Cosseno
 
 Também conhecido por dissimilaridade de cossenos. O conceito é simples. Quanto maior o ângulo entre dois vetores, mais distantes eles são considerados. Ao considerar essa interpretação de distância, a distância mínima é 0 (quando o ângulo entre eles é 0°) e a distância máxima é 2 (quando o ângulo entre eles é 180°).
 
@@ -114,11 +124,11 @@ Eles são especializados nessa tarefa e recentemente estão até se autodenomina
 - Pinecone
 - Milvus
 - Qdrant
-- pgvector (É uma extensão do Postgres adiciona vetores)
+- pgvector (É uma extensão do Postgres que adiciona vetores)
 
 Não vou me atentar aos prós e contras de cada um, pois esse não é o foco.
 
-### Código
+### Exemplo de código
 
 Dado essa avalanche de informações, vamos botar a mão na massa! Primeiro vamos precisar de uma função que adiciona novos textos na “memória da IA”. Essa é a `add_text_to_db`.
 
@@ -175,4 +185,8 @@ def answer(question):
 
 Infelizmente a segunda abordagem não é tão simples quanto a primeira, mas é muito mais poderosa. Por isso, te encorajo a tentar implementar. É bastante valioso tanto para seu aprendizado quanto para sua empresa, que vai economizar uma boa grana com atendimento.
 
-Muito difícil? Não se desespere! Mesmo parecendo bastante complexo e essa ser só a ponta do iceberg quando se fala de chatbots inteligentes, esse mecanismo e muitas outras sofisticações já está disponível publicamente e de forma **gratuita** no nosso chatbot inteligente, a [Grido](http://gridoai.com/).
+### Próximos passos
+
+Muito difícil? Não se desespere! Mesmo parecendo bastante complexo e essa ser só a ponta do iceberg quando se fala de chatbots inteligentes, esse mecanismo e muitas outras sofisticações já estão disponíveis publicamente e de forma **gratuita** no nosso chatbot inteligente, a [Grido](http://gridoai.com/).
+
+Obs: Uma dimensão de complexidade não abordada aqui é com relação a como integrar com plataformas de atendimento já existentes e maduras. A gente se propõem a integrar com o sistema que você usa seja ele qual for!
