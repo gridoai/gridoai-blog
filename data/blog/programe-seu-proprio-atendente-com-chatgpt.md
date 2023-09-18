@@ -189,4 +189,4 @@ Infelizmente a segunda abordagem não é tão simples quanto a primeira, mas é 
 
 Muito difícil? Não se desespere! Mesmo parecendo bastante complexo e essa ser só a ponta do iceberg quando se fala de chatbots inteligentes, esse mecanismo e muitas outras sofisticações já estão disponíveis publicamente e de forma **gratuita** no nosso chatbot inteligente, a [Grido](http://gridoai.com/).
 
-Obs: Uma dimensão de complexidade não abordada aqui é com relação a como integrar com plataformas de atendimento já existentes e maduras. A gente se propõem a integrar com o sistema que você usa seja ele qual for!
+Obs: Uma dimensão de complexidade não abordada aqui é com relação a como integrar com plataformas de atendimento ao cliente já existentes e maduras. A gente se propõem a integrar com o sistema que você usa seja ele qual for!
